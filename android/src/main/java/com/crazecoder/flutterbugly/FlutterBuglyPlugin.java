@@ -57,7 +57,8 @@ public class FlutterBuglyPlugin implements FlutterPlugin, MethodCallHandler, Act
         if (call.method.equals("initBugly")) {
             if (call.hasArgument("appId")) {
                 if (call.hasArgument("autoInit")) {
-                    Beta.autoInit = false;
+//                    Beta.autoInit = false;
+                    Beta.autoInit = call.argument("autoInit");
                 }
                 if (call.hasArgument("enableHotfix")) {
                     Beta.enableHotfix = call.argument("enableHotfix");
