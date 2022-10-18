@@ -58,6 +58,7 @@ class FlutterBugly {
       "initDelay": initDelay,
       "upgradeCheckPeriod": upgradeCheckPeriod,
       "customUpgrade": customUpgrade,
+      "autoInit":autoInit,
     };
     final dynamic result = await _channel.invokeMethod('initBugly', map);
     Map resultMap = json.decode(result);
