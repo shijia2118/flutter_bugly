@@ -99,10 +99,7 @@ public class FlutterBuglyPlugin implements FlutterPlugin, MethodCallHandler, Act
                         }
                     } : null;
                 }
-                Log.i(">>>>>>>>>>activity0===="+""+activity.getClass());
                 Beta.canShowUpgradeActs.add(activity.getClass());
-                Log.i(">>>>>>>>>>activity1===="+""+activity.getClass());
-
                 String appId = call.argument("appId").toString();
 //                Bugly.init(activity.getApplicationContext(), appId, BuildConfig.DEBUG);
                 Bugly.init(activity.getApplicationContext(), appId, false);
