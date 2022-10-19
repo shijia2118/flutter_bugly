@@ -3,6 +3,7 @@ package com.crazecoder.flutterbugly;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -98,10 +99,13 @@ public class FlutterBuglyPlugin implements FlutterPlugin, MethodCallHandler, Act
                         }
                     } : null;
                 }
+                Log.i(">>>>>>>>>>activity0===="+""+activity.getClass());
                 Beta.canShowUpgradeActs.add(activity.getClass());
+                Log.i(">>>>>>>>>>activity1===="+""+activity.getClass());
 
                 String appId = call.argument("appId").toString();
-                Bugly.init(activity.getApplicationContext(), appId, BuildConfig.DEBUG);
+//                Bugly.init(activity.getApplicationContext(), appId, BuildConfig.DEBUG);
+                Bugly.init(activity.getApplicationContext(), appId, false);
                 if (call.hasArgument("channel")) {
                     String channel = call.argument("channel");
                     if (!TextUtils.isEmpty(channel))
