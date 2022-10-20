@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     FlutterBugly.init(
-      androidAppId: "your app id",
+      androidAppId: "35b22579ab",
       iOSAppId: "your app id",
       customUpgrade: true, // 调用 Android 原生升级方式
     ).then((_result) {
