@@ -3,7 +3,6 @@ package com.crazecoder.flutterbugly;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.text.TextUtils;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -58,8 +57,7 @@ public class FlutterBuglyPlugin implements FlutterPlugin, MethodCallHandler, Act
         if (call.method.equals("initBugly")) {
             if (call.hasArgument("appId")) {
                 if (call.hasArgument("autoInit")) {
-//                    Beta.autoInit = false;
-                    Beta.autoInit = call.argument("autoInit");
+                    Beta.autoInit = false;
                 }
                 if (call.hasArgument("enableHotfix")) {
                     Beta.enableHotfix = call.argument("enableHotfix");
@@ -100,9 +98,9 @@ public class FlutterBuglyPlugin implements FlutterPlugin, MethodCallHandler, Act
                     } : null;
                 }
                 Beta.canShowUpgradeActs.add(activity.getClass());
+
                 String appId = call.argument("appId").toString();
-//                Bugly.init(activity.getApplicationContext(), appId, BuildConfig.DEBUG);
-                Bugly.init(activity.getApplicationContext(), appId, false);
+                Bugly.init(activity.getApplicationContext(), appId, BuildConfig.DEBUG);
                 if (call.hasArgument("channel")) {
                     String channel = call.argument("channel");
                     if (!TextUtils.isEmpty(channel))
